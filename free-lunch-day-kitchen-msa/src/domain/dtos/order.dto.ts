@@ -1,0 +1,1 @@
+export type OrderStatus = 'completed' | 'pending' | 'failed'

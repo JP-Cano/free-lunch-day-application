@@ -1,0 +1,31 @@
+version: "3.7"
+services:
+  food-warehouse:
+    image: food-warehouse-ms
+    container_name: 'food-warehouse-ms-c'
+    ports:
+      - "3000:3000"
+    networks:
+      - free-lunch-day
+  kitchen:
+    image: kitchen-ms
+    container_name: 'kitchen-ms-c'
+    ports:
+      - "3001:3001"
+    networks:
+      - free-lunch-day
+    depends_on:
+      - food-warehouse
+  api-gateway-ms:
+    image: api-gateway-ms
+    container_name: 'api-gateway-ms-c'
+    ports:
+      - "80:80"
+    networks:
+      - free-lunch-day
+    depends_on:
+      - kitchen
+      - food-warehouse
+networks:
+  free-lunch-day:
+    driver: bridge

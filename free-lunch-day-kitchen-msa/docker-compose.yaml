@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  kitchen:
+    image: kitchen-ms
+    container_name: 'kitchen-ms-c'
+    ports:
+      - "3001:3001"
+    networks:
+      - free-lunch-day
+    env_file:
+      - ./environments/.env
+networks:
+  free-lunch-day:
+    driver: bridge

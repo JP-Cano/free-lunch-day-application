@@ -1,0 +1,29 @@
+{
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "dev": "set ENVIRONMENT=local && tsx watch src/index.ts",
+    "db:generate": "drizzle-kit generate:pg --schema=./src/database/entities/food-warehouse.entity.ts",
+    "db:migrate": "tsx ./src/database/migrations/migrate.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.9.0",
+    "axios": "^1.6.8",
+    "drizzle-orm": "^0.30.6",
+    "hono": "^4.1.5",
+    "kafkajs": "^2.2.4",
+    "pg": "^8.11.3",
+    "postgres": "^3.4.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "@types/pg": "^8.11.4",
+    "dotenv": "^16.4.5",
+    "drizzle-kit": "^0.20.14",
+    "tsx": "^4.7.1",
+    "winston": "^3.13.0"
+  },
+  "packageManager": "pnpm@8.4.0",
+  "engines": {
+    "node": "21.x"
+  }
+}

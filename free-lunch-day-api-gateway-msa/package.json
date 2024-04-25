@@ -1,0 +1,22 @@
+{
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "dev": "set ENVIRONMENT=local && tsx watch src/index.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.9.0",
+    "axios": "^1.6.8",
+    "hono": "^4.1.7",
+    "hono-rate-limiter": "^0.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "dotenv": "^16.4.5",
+    "tsx": "^4.7.1",
+    "winston": "^3.13.0"
+  },
+  "packageManager": "pnpm@8.4.0",
+  "engines": {
+    "node": "21.x"
+  }
+}

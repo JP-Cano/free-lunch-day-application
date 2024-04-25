@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  food-warehouse:
+    image: food-warehouse-ms
+    container_name: 'food-warehouse-ms-c'
+    ports:
+      - "3000:3000"
+    networks:
+      - free-lunch-day
+    env_file:
+      - ./environments/.env
+networks:
+  free-lunch-day:
+    driver: bridge
